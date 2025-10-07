@@ -47,16 +47,22 @@ Esta reimplementação moderniza os conceitos do artigo usando:
 ### Estrutura do Projeto
 
 ```
-1982-11-micro-representacao-figuras/
-├── main.go           # Ponto de entrada do programa
-├── types.go          # Definições de tipos (Point3D, Figure, Camera)
-├── renderer.go       # Engine de renderização 3D
-├── yaml_loader.go    # Carregador de arquivos YAML
-├── go.mod           # Dependências do projeto
-├── exemplos/        # Figuras de exemplo
-│   ├── cubo.yaml    # Cubo 3D simples
-│   └── casa.yaml    # Casa com telhado, porta e janela
-└── README.md        # Este arquivo
+microsistemas/1982-11-representacao-figuras/
+├── cmd/figuras3d/main.go  # Ponto de entrada do programa
+├── internal/              # Lógica interna da aplicação
+│   ├── core/             # Carregamento de modelos
+│   ├── renderer/         # Engine de renderização 3D
+│   └── viewer/           # Interface gráfica
+├── pkg/types/            # Definições de tipos (Point3D, Figure, Camera)
+├── modelos/              # Modelos 3D de exemplo
+│   ├── cubo.yaml        # Cubo 3D simples
+│   ├── casa.yaml        # Casa com telhado, porta e janela
+│   ├── piramide.yaml    # Pirâmide triangular
+│   ├── estrela.yaml     # Estrela 3D
+│   └── escada.yaml      # Escada em degraus
+├── go.mod               # Dependências do projeto
+├── Makefile             # Comandos de build e execução
+└── README.md            # Este arquivo
 ```
 
 ## 🎯 Como Usar
@@ -64,7 +70,7 @@ Esta reimplementação moderniza os conceitos do artigo usando:
 ### Instalação
 
 ```bash
-cd 1982-11-micro-representacao-figuras
+cd microsistemas/1982-11-representacao-figuras
 go mod tidy
 ```
 
@@ -72,10 +78,13 @@ go mod tidy
 
 ```bash
 # Renderizar o cubo de exemplo
-go run . exemplos/cubo.yaml
+make generate FILE=modelos/cubo.yaml
 
 # Renderizar a casa de exemplo
-go run . exemplos/casa.yaml
+make generate FILE=modelos/casa.yaml
+
+# Ou usando go run diretamente
+go run cmd/figuras3d/main.go generate modelos/cubo.yaml
 ```
 
 ### Criar Suas Próprias Figuras
@@ -102,12 +111,12 @@ camera:
 
 ## 📊 Exemplos Incluídos
 
-### Cubo (`exemplos/cubo.yaml`)
+### Cubo (`modelos/cubo.yaml`)
 - Cubo 3D básico com 8 vértices
 - Demonstra faces, arestas e perspectiva
 - Ideal para entender os conceitos fundamentais
 
-### Casa (`exemplos/casa.yaml`)
+### Casa (`modelos/casa.yaml`)
 - Casa com telhado, porta e janela
 - Estrutura mais complexa inspirada nas figuras do artigo
 - Mostra diferentes tipos de formas geométricas

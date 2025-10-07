@@ -20,8 +20,8 @@ help:
 	@echo "  test          - Executa testes"
 	@echo ""
 	@echo "Exemplos:"
-	@echo "  make generate FILE=samples/cubo.yaml"
-	@echo "  make view FILE=samples/casa.yaml"
+	@echo "  make generate FILE=modelos/cubo.yaml"
+	@echo "  make view FILE=modelos/casa.yaml"
 
 build:
 	@echo "Compilando representacao-figuras..."
@@ -32,7 +32,7 @@ build:
 generate:
 	@if [ -z "$(FILE)" ]; then \
 		echo "Erro: especifique FILE=arquivo.yaml"; \
-		echo "   Exemplo: make generate FILE=samples/cubo.yaml"; \
+		echo "   Exemplo: make generate FILE=modelos/cubo.yaml"; \
 		exit 1; \
 	fi
 	@mkdir -p output
@@ -41,7 +41,7 @@ generate:
 view:
 	@if [ -z "$(FILE)" ]; then \
 		echo "Erro: especifique FILE=arquivo.yaml"; \
-		echo "   Exemplo: make view FILE=samples/casa.yaml"; \
+		echo "   Exemplo: make view FILE=modelos/casa.yaml"; \
 		exit 1; \
 	fi
 	@go run $(CMD_PATH) view $(FILE)
