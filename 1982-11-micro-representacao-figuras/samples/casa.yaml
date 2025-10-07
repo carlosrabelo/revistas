@@ -1,0 +1,73 @@
+nome: casa_simples
+pontos:
+  # Base da casa (chão)
+  - {x: -2, y: 6, z: -1, nome: "P1"}   # Base frontal esquerda
+  - {x:  2, y: 6, z: -1, nome: "P2"}   # Base frontal direita
+  - {x:  2, y: 10, z: -1, nome: "P3"}  # Base traseira direita
+  - {x: -2, y: 10, z: -1, nome: "P4"}  # Base traseira esquerda
+
+  # Topo das paredes
+  - {x: -2, y: 6, z:  2, nome: "P5"}   # Parede frontal esquerda
+  - {x:  2, y: 6, z:  2, nome: "P6"}   # Parede frontal direita
+  - {x:  2, y: 10, z:  2, nome: "P7"}  # Parede traseira direita
+  - {x: -2, y: 10, z:  2, nome: "P8"}  # Parede traseira esquerda
+
+  # Telhado
+  - {x:  0, y: 6, z:  3.5, nome: "P9"}  # Pico frontal do telhado
+  - {x:  0, y: 10, z: 3.5, nome: "P10"} # Pico traseiro do telhado
+
+  # Porta (na face frontal)
+  - {x: -0.4, y: 6, z: -1, nome: "P11"} # Base esquerda da porta
+  - {x:  0.4, y: 6, z: -1, nome: "P12"} # Base direita da porta
+  - {x: -0.4, y: 6, z:  1, nome: "P13"} # Topo esquerdo da porta
+  - {x:  0.4, y: 6, z:  1, nome: "P14"} # Topo direito da porta
+
+  # Janela (na face lateral direita)
+  - {x:  2, y: 7.5, z: 0.2, nome: "P15"}  # Canto inferior esquerdo janela
+  - {x:  2, y: 7.5, z: 1.2, nome: "P16"}  # Canto superior esquerdo janela
+  - {x:  2, y: 8.5, z: 1.2, nome: "P17"}  # Canto superior direito janela
+  - {x:  2, y: 8.5, z: 0.2, nome: "P18"}  # Canto inferior direito janela
+
+linhas:
+  # Base da casa
+  - {p1: 0, p2: 1}   # P1-P2
+  - {p1: 1, p2: 2}   # P2-P3
+  - {p1: 2, p2: 3}   # P3-P4
+  - {p1: 3, p2: 0}   # P4-P1
+
+  # Paredes verticais
+  - {p1: 0, p2: 4}   # P1-P5
+  - {p1: 1, p2: 5}   # P2-P6
+  - {p1: 2, p2: 6}   # P3-P7
+  - {p1: 3, p2: 7}   # P4-P8
+
+  # Topo das paredes
+  - {p1: 4, p2: 5}   # P5-P6
+  - {p1: 5, p2: 6}   # P6-P7
+  - {p1: 6, p2: 7}   # P7-P8
+  - {p1: 7, p2: 4}   # P8-P5
+
+  # Telhado
+  - {p1: 4, p2: 8}   # P5-P9 (parede frontal ao pico)
+  - {p1: 5, p2: 8}   # P6-P9 (parede frontal ao pico)
+  - {p1: 6, p2: 9}   # P7-P10 (parede traseira ao pico)
+  - {p1: 7, p2: 9}   # P8-P10 (parede traseira ao pico)
+  - {p1: 8, p2: 9}   # P9-P10 (linha do telhado)
+
+  # Porta
+  - {p1: 10, p2: 11} # Base da porta
+  - {p1: 10, p2: 12} # Lateral esquerda da porta
+  - {p1: 11, p2: 13} # Lateral direita da porta
+  - {p1: 12, p2: 13} # Topo da porta
+
+  # Janela
+  - {p1: 14, p2: 15} # Inferior da janela
+  - {p1: 15, p2: 16} # Superior da janela
+  - {p1: 16, p2: 17} # Direita da janela
+  - {p1: 17, p2: 14} # Esquerda da janela
+
+camera:
+  observador: {x: 0, y: 0, z: 0}    # Observador na origem
+  distancia: 10                     # Distância adequada para perspectiva
+  largura: 12.8                     # Baseado no HP-85 original
+  altura: 9.6

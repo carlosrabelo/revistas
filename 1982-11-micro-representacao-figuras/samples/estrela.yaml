@@ -1,0 +1,38 @@
+nome: estrela_3d
+pontos:
+  # Pontas da estrela
+  - {x:  0, y: 7, z:  2, nome: "TOPO"}     # Ponta superior
+  - {x:  0, y: 7, z: -2, nome: "BASE"}     # Ponta inferior
+  - {x: -2, y: 7, z:  0, nome: "ESQ"}      # Ponta esquerda
+  - {x:  2, y: 7, z:  0, nome: "DIR"}      # Ponta direita
+  - {x:  0, y: 5, z:  0, nome: "FRENTE"}   # Ponta frontal
+  - {x:  0, y: 9, z:  0, nome: "TRAS"}     # Ponta traseira
+
+linhas:
+  # Conecta todas as pontas ao centro (formando estrela 3D)
+  - {p1: 0, p2: 1}  # TOPO-BASE
+  - {p1: 2, p2: 3}  # ESQ-DIR
+  - {p1: 4, p2: 5}  # FRENTE-TRAS
+
+  # Conexões cruzadas para dar volume
+  - {p1: 0, p2: 2}  # TOPO-ESQ
+  - {p1: 0, p2: 3}  # TOPO-DIR
+  - {p1: 0, p2: 4}  # TOPO-FRENTE
+  - {p1: 0, p2: 5}  # TOPO-TRAS
+
+  - {p1: 1, p2: 2}  # BASE-ESQ
+  - {p1: 1, p2: 3}  # BASE-DIR
+  - {p1: 1, p2: 4}  # BASE-FRENTE
+  - {p1: 1, p2: 5}  # BASE-TRAS
+
+camera:
+  observador: {x: 0, y: 0, z: 0}
+  distancia: 6
+  largura: 12.8
+  altura: 9.6
+
+render:
+  mostrar_vertices: true
+  cor_vertices: "#0000ff"
+  cor_linha: "#000000"
+  espessura_linha: 2.0

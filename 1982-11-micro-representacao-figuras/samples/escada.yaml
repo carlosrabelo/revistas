@@ -1,0 +1,56 @@
+nome: escada_3d
+pontos:
+  # Degrau 1 (mais baixo)
+  - {x: -1, y: 6, z: -1, nome: "D1A"}
+  - {x:  1, y: 6, z: -1, nome: "D1B"}
+  - {x:  1, y: 7, z: -1, nome: "D1C"}
+  - {x: -1, y: 7, z: -1, nome: "D1D"}
+
+  # Degrau 2 (médio)
+  - {x: -1, y: 7, z:  0, nome: "D2A"}
+  - {x:  1, y: 7, z:  0, nome: "D2B"}
+  - {x:  1, y: 8, z:  0, nome: "D2C"}
+  - {x: -1, y: 8, z:  0, nome: "D2D"}
+
+  # Degrau 3 (mais alto)
+  - {x: -1, y: 8, z:  1, nome: "D3A"}
+  - {x:  1, y: 8, z:  1, nome: "D3B"}
+  - {x:  1, y: 9, z:  1, nome: "D3C"}
+  - {x: -1, y: 9, z:  1, nome: "D3D"}
+
+linhas:
+  # Degrau 1
+  - {p1: 0, p2: 1}   # Base degrau 1
+  - {p1: 1, p2: 2}   # Lateral direita degrau 1
+  - {p1: 2, p2: 3}   # Frente degrau 1
+  - {p1: 3, p2: 0}   # Lateral esquerda degrau 1
+
+  # Degrau 2
+  - {p1: 4, p2: 5}   # Base degrau 2
+  - {p1: 5, p2: 6}   # Lateral direita degrau 2
+  - {p1: 6, p2: 7}   # Frente degrau 2
+  - {p1: 7, p2: 4}   # Lateral esquerda degrau 2
+
+  # Degrau 3
+  - {p1: 8, p2: 9}   # Base degrau 3
+  - {p1: 9, p2: 10}  # Lateral direita degrau 3
+  - {p1: 10, p2: 11} # Frente degrau 3
+  - {p1: 11, p2: 8}  # Lateral esquerda degrau 3
+
+  # Conexões entre degraus
+  - {p1: 2, p2: 4}   # Degrau 1 para 2 (esquerda)
+  - {p1: 3, p2: 7}   # Degrau 1 para 2 (direita)
+  - {p1: 6, p2: 8}   # Degrau 2 para 3 (esquerda)
+  - {p1: 7, p2: 11}  # Degrau 2 para 3 (direita)
+
+camera:
+  observador: {x: 0, y: 0, z: 0}
+  distancia: 8
+  largura: 12.8
+  altura: 9.6
+
+render:
+  mostrar_vertices: true
+  mostrar_nomes: false
+  cor_vertices: "#00aa00"
+  espessura_linha: 1.2

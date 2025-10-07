@@ -1,0 +1,35 @@
+nome: piramide
+pontos:
+  # Base quadrada da pirâmide
+  - {x: -1.5, y: 8, z: -1.5, nome: "A"}  # Base inferior esquerda
+  - {x:  1.5, y: 8, z: -1.5, nome: "B"}  # Base inferior direita
+  - {x:  1.5, y: 8, z:  1.5, nome: "C"}  # Base superior direita
+  - {x: -1.5, y: 8, z:  1.5, nome: "D"}  # Base superior esquerda
+
+  # Vértice superior da pirâmide
+  - {x:  0, y: 8, z:  3, nome: "TOPO"}    # Pico da pirâmide
+
+linhas:
+  # Base da pirâmide
+  - {p1: 0, p2: 1}  # A-B
+  - {p1: 1, p2: 2}  # B-C
+  - {p1: 2, p2: 3}  # C-D
+  - {p1: 3, p2: 0}  # D-A
+
+  # Arestas da base ao topo
+  - {p1: 0, p2: 4}  # A-TOPO
+  - {p1: 1, p2: 4}  # B-TOPO
+  - {p1: 2, p2: 4}  # C-TOPO
+  - {p1: 3, p2: 4}  # D-TOPO
+
+camera:
+  observador: {x: 0, y: 0, z: 0}
+  distancia: 8
+  largura: 12.8
+  altura: 9.6
+
+render:
+  mostrar_vertices: true
+  mostrar_nomes: true
+  cor_vertices: "#ff0000"
+  espessura_linha: 1.5

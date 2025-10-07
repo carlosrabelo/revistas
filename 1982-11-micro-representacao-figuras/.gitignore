@@ -1,0 +1,30 @@
+# Binários
+/bin/
+*.exe
+/figuras3d
+
+# Arquivos gerados
+/output/
+output_*.png
+
+
+# Go
+vendor/
+go.work
+go.work.sum
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporários
+/tmp/
+
+# Arquivos protegidos por direitos autorais
+*.pdf

@@ -1,0 +1,38 @@
+nome: cubo
+pontos:
+  # Face frontal (mais próxima do observador)
+  - {x: -1, y: 5, z: -1, nome: "A"}   # Vértice frontal inferior esquerdo
+  - {x:  1, y: 5, z: -1, nome: "B"}   # Vértice frontal inferior direito
+  - {x:  1, y: 5, z:  1, nome: "C"}   # Vértice frontal superior direito
+  - {x: -1, y: 5, z:  1, nome: "D"}   # Vértice frontal superior esquerdo
+
+  # Face traseira (mais distante do observador)
+  - {x: -1, y: 8, z: -1, nome: "E"}   # Vértice traseiro inferior esquerdo
+  - {x:  1, y: 8, z: -1, nome: "F"}   # Vértice traseiro inferior direito
+  - {x:  1, y: 8, z:  1, nome: "G"}   # Vértice traseiro superior direito
+  - {x: -1, y: 8, z:  1, nome: "H"}   # Vértice traseiro superior esquerdo
+
+linhas:
+  # Face frontal
+  - {p1: 0, p2: 1}  # A-B (base frontal)
+  - {p1: 1, p2: 2}  # B-C (direita frontal)
+  - {p1: 2, p2: 3}  # C-D (topo frontal)
+  - {p1: 3, p2: 0}  # D-A (esquerda frontal)
+
+  # Face traseira
+  - {p1: 4, p2: 5}  # E-F (base traseira)
+  - {p1: 5, p2: 6}  # F-G (direita traseira)
+  - {p1: 6, p2: 7}  # G-H (topo traseira)
+  - {p1: 7, p2: 4}  # H-E (esquerda traseira)
+
+  # Conexões entre faces (profundidade)
+  - {p1: 0, p2: 4}  # A-E (inferior esquerda)
+  - {p1: 1, p2: 5}  # B-F (inferior direita)
+  - {p1: 2, p2: 6}  # C-G (superior direita)
+  - {p1: 3, p2: 7}  # D-H (superior esquerda)
+
+camera:
+  observador: {x: 0, y: 0, z: 0}    # Observador na origem
+  distancia: 8                       # Distância maior para melhor perspectiva
+  largura: 12.8                     # Baseado no HP-85 original
+  altura: 9.6
